@@ -1,0 +1,24 @@
+{
+  "name": "repro-in-a-box",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n buggyboard,server,ui -c blue,green,magenta \"npm run dev -w @repro/buggyboard\" \"npm run dev -w @repro/server\" \"npm run dev -w @repro/war-room\"",
+    "dev:buggyboard": "npm run dev -w @repro/buggyboard",
+    "dev:server": "npm run dev -w @repro/server",
+    "dev:ui": "npm run dev -w @repro/war-room",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

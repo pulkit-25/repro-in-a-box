@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  @apply bg-zinc-950 text-zinc-100 antialiased;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
