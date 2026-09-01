@@ -33,7 +33,7 @@ Without `SOLARI_API_KEY`, the system falls back to local Playwright (headless Ch
 Point `TARGET_URL` at the **live BuggyBoard** deployment so Solari's cloud browser can reach it (localhost is not visible from Solari):
 
 ```env
-TARGET_URL=https://your-buggyboard.vercel.app
+TARGET_URL=https://buggyboard.vercel.app
 ```
 
 The War Room and repro orchestrator still run locally (`npm run dev`). Only the demo target needs to be public.

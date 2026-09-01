@@ -66,7 +66,8 @@ app.post("/api/projects", auth, (req, res) => {
 });
 
 app.post("/api/projects/:id/seed-large", auth, (req, res) => {
-  const project = store.getProject(req.params.id);
+  const projectId = String(req.params.id);
+  const project = store.getProject(projectId);
   if (!project || project.userId !== (req as AuthedRequest).userId) {
     return res.status(404).json({ error: "Project not found" });
   }
@@ -75,7 +76,8 @@ app.post("/api/projects/:id/seed-large", auth, (req, res) => {
 });
 
 app.post("/api/projects/:id/upload", auth, upload.single("file"), async (req, res) => {
-  const project = store.getProject(req.params.id);
+  const projectId = String(req.params.id);
+  const project = store.getProject(projectId);
   if (!project || project.userId !== (req as AuthedRequest).userId) {
     return res.status(404).json({ error: "Project not found" });
   }
