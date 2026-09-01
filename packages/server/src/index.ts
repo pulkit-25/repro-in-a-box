@@ -10,7 +10,7 @@ import { loadConfig } from "@repro/core";
 import { ReproOrchestrator } from "./orchestrator.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-dotenvConfig({ path: resolve(__dirname, "../../../.env") });
+dotenvConfig({ path: resolve(__dirname, "../../../.env"), override: true });
 
 const config = loadConfig();
 const app = express();
